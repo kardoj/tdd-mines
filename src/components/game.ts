@@ -1,23 +1,16 @@
-enum CellContent {
-    Mine,
-    Empty,
-    One,
-    Two,
-    Three,
-    Four,
-    Five,
-    Six,
-    Seven,
-    Eight
-}
+import Cell from './cell';
 
 class Game {
-    board: Array<CellContent> | null = null;
+    board: Array<Cell> = [];
 
-    start(board: Array<CellContent>) {
+    start(board: Array<Cell>) {
         this.board = board;
+        this.closeAllCells();
+    }
+
+    private closeAllCells() {
+        this.board.forEach((cell) => { cell.close(); });
     }
 }
 
-export { CellContent, Game };
 export default Game;

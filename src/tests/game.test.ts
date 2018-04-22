@@ -1,16 +1,27 @@
-import { CellContent, Game } from '../components/game';
+import Game from '../components/game';
+import { Cell, CellContent } from '../components/cell';
+
+let game: Game = new Game();
+beforeEach(() => game = new Game());
 
 test('start sets game board', () => {
-    const game = new Game();
     game.start(oneMineTopCenterBoard());
 
-    expect(game.board).not.toBe(null);
+    expect(game.board).not.toBe([]);
 });
 
-function oneMineTopCenterBoard(): Array<CellContent> {
+test('start closes every cell', () => {
+    const board = oneMineTopCenterBoard();
+    board[0].open();
+    game.start(board);
+
+    game.board.forEach((cell) => { expect(cell.isClosed()).toBe(true); });
+});
+
+function oneMineTopCenterBoard(): Array<Cell> {
     return [
-        CellContent.One, CellContent.Mine, CellContent.One,
-        CellContent.One, CellContent.One, CellContent.One,
-        CellContent.Empty, CellContent.Empty, CellContent.Empty
+        new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
+        new Cell(CellContent.One), new Cell(CellContent.One), new Cell(CellContent.One),
+        new Cell(CellContent.Empty), new Cell(CellContent.Empty), new Cell(CellContent.Empty)
     ];
 }
