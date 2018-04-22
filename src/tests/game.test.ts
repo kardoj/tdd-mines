@@ -7,7 +7,7 @@ beforeEach(() => game = new Game());
 test('start sets game board', () => {
     game.start(oneMineTopCenterBoard());
 
-    expect(game.board.isEmpty()).not.toBe(true);
+    expect(game.boardIsEmpty()).not.toBe(true);
 });
 
 test('start closes every cell', () => {
@@ -15,21 +15,21 @@ test('start closes every cell', () => {
     board[0].open();
     game.start(board);
 
-    expect(game.board.allCellsClosed()).toBe(true);
+    expect(game.allBoardCellsClosed()).toBe(true);
 });
 
 test('opens a cell', () => {
     game.start(oneMineTopCenterBoard());
-    game.board.openCell(0);
+    game.openCell(0);
 
-    expect(game.board.cellIsClosed(0)).toBe(false);
+    expect(game.boardCellIsClosed(0)).toBe(false);
 });
 
 test('opens a cell that does not exist', () => {
     game.start(oneMineTopCenterBoard());
-    game.board.openCell(69);
+    game.openCell(69);
 
-    expect(game.board.cellIsClosed(69)).toBe(false);
+    expect(game.boardCellIsClosed(69)).toBe(false);
 });
 
 function oneMineTopCenterBoard(): Array<Cell> {
