@@ -10,6 +10,12 @@ test('start sets game board', () => {
     expect(game.boardIsEmpty()).not.toBe(true);
 });
 
+test('start sets game running', () => {
+    game.start(oneMineTopCenterBoard());
+
+    expect(game.isRunning()).toBe(true);
+});
+
 test('start closes every cell', () => {
     const board = oneMineTopCenterBoard();
     board[0].open();
@@ -30,6 +36,13 @@ test('opens a cell that does not exist', () => {
     game.openCell(69);
 
     expect(game.cellIsClosed(69)).toBe(false);
+});
+
+test('the game is lost when a mine is opened', () => {
+    game.start(oneMineTopCenterBoard());
+    game.openCell(1);
+
+    expect(game.isLost()).toBe(true);
 });
 
 function oneMineTopCenterBoard(): Array<Cell> {

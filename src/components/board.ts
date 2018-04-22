@@ -12,16 +12,13 @@ class Board {
     }
 
     openCell(index: number) {
-        const cell = this.cells[index];
-        if (cell === undefined) return;
-
+        if (this.cellDoesNotExist(index)) return;
         this.cells[index].open();
     }
 
     cellIsClosed(index: number): boolean {
-        const cell = this.cells[index];
-        if (cell === undefined) return false;
-        return cell.isClosed();
+        if (this.cellDoesNotExist(index)) return false;
+        return this.cells[index].isClosed();
     }
 
     isEmpty() {
@@ -35,6 +32,15 @@ class Board {
             }
         }
         return true;
+    }
+
+    cellIsAMine(index: number): boolean {
+        if (this.cellDoesNotExist(index)) return false;
+        return this.cells[index].isAMine();
+    }
+
+    private cellDoesNotExist(index: number): boolean {
+        return this.cells[index] === undefined;
     }
 }
 

@@ -28,6 +28,7 @@ class Cell {
     isClosed(): boolean { return this.status === CellStatus.Closed; }
     open() { this.status = CellStatus.Opened; }
     close() { this.status = CellStatus.Closed; }
+    isAMine(): boolean { return this.content === CellContent.Mine; }
 }
 
 export { CellContent, CellStatus, Cell };
