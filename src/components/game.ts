@@ -11,8 +11,8 @@ class Game {
 
     openCell(index: number) { this.board.openCell(index); }
     boardIsEmpty(): boolean { return this.board.isEmpty(); }
-    allBoardCellsClosed(): boolean { return this.board.allCellsClosed(); }
-    boardCellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
+    allCellsClosed(): boolean { return this.board.allCellsClosed(); }
+    cellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
 }
 
 export default Game;
