@@ -1,15 +1,12 @@
 import Cell from './cell';
+import Board from './board';
 
 class Game {
-    board: Array<Cell> = [];
+    board: Board;
 
-    start(board: Array<Cell>) {
-        this.board = board;
-        this.closeAllCells();
-    }
-
-    private closeAllCells() {
-        this.board.forEach((cell) => { cell.close(); });
+    start(boardState: Array<Cell>) {
+        this.board = new Board(boardState);
+        this.board.closeAllCells();
     }
 }
 
