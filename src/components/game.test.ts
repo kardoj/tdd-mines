@@ -7,13 +7,13 @@ beforeEach(() => game = new Game());
 test('start sets game board', () => {
     game.start(3, oneMineTopCenterBoard());
 
-    expect(game.boardIsEmpty()).not.toBe(true);
+    expect(game.boardIsEmpty()).not.toEqual(true);
 });
 
 test('start sets game running', () => {
     game.start(3, oneMineTopCenterBoard());
 
-    expect(game.isRunning()).toBe(true);
+    expect(game.isRunning()).toEqual(true);
 });
 
 test('start closes every cell', () => {
@@ -21,28 +21,28 @@ test('start closes every cell', () => {
     board[0].open();
     game.start(3, board);
 
-    expect(game.allCellsClosed()).toBe(true);
+    expect(game.allCellsClosed()).toEqual(true);
 });
 
 test('opens a cell', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(0);
 
-    expect(game.cellIsClosed(0)).toBe(false);
+    expect(game.cellIsClosed(0)).toEqual(false);
 });
 
 test('opens a cell that does not exist', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(69);
 
-    expect(game.cellIsClosed(69)).toBe(false);
+    expect(game.cellIsClosed(69)).toEqual(false);
 });
 
 test('the game is lost when a mine is opened', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(1);
 
-    expect(game.isLost()).toBe(true);
+    expect(game.isLost()).toEqual(true);
 });
 
 test('opening an empty cell on the bottom row opens adjacent empty and number cells', () => {
@@ -51,9 +51,9 @@ test('opening an empty cell on the bottom row opens adjacent empty and number ce
 
     for (let i = 0; i < 9; i++) {
         if (i < 3) {
-            expect(game.cellIsClosed(i)).toBe(true);
+            expect(game.cellIsClosed(i)).toEqual(true);
         } else {
-            expect(game.cellIsClosed(i)).toBe(false);
+            expect(game.cellIsClosed(i)).toEqual(false);
         }
     }
 });
