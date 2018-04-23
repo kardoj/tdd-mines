@@ -1,5 +1,5 @@
-import Game from '../components/game';
-import { Cell, CellContent } from '../components/cell';
+import Game from '../../src/components/game';
+import { Cell, CellContent } from '../../src/components/cell';
 
 let game: Game = new Game();
 beforeEach(() => game = new Game());
