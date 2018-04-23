@@ -45,7 +45,7 @@ test('the game is lost when a mine is opened', () => {
     expect(game.isLost()).toBe(true);
 });
 
-test('opening an empty cell opens adjacent empty and number cells', () => {
+test('opening an empty cell on the bottom row opens adjacent empty and number cells', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(7);
 
