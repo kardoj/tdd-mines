@@ -34,3 +34,7 @@ test('gives correct top row indexes', () => {
 test('gives correct bottom row indexes', () => {
     expect(table.getAdjacentIndexes(7)).toEqual([3, 4, 5, 6, 8]);
 });
+
+test('gives correct all around indexes', () => {
+    expect(table.getAdjacentIndexes(4)).toEqual([0, 1, 2, 3, 5, 6, 7, 8]);
+});

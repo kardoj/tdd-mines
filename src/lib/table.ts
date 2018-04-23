@@ -35,8 +35,7 @@ class Table {
         if (bottomRow) return [topLeft, top, topRight, left, right];
         if (leftColumn) return [top, topRight, right, bottom, bottomRight];
         if (rightColumn) return [topLeft, top, left, bottomLeft, bottom];
-
-        return [];
+        return [topLeft, top, topRight, left, right, bottomLeft, bottom, bottomRight];
     }
 }
 
