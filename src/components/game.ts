@@ -11,15 +11,18 @@ class Game {
     private board: Board;
     private state: GameState;
 
-    start(boardState: Array<Cell>) {
-        this.board = new Board(boardState);
+    start(cols: number, boardState: Array<Cell>) {
+        this.board = new Board(cols, boardState);
         this.board.closeAllCells();
         this.state = GameState.IsRunning;
     }
 
     openCell(index: number) {
         this.board.openCell(index);
-        if (this.board.cellIsAMine(index)) this.state = GameState.IsLost;
+        if (this.board.cellIsAMine(index)) {
+            this.state = GameState.IsLost;
+            return;
+        }
     }
 
     boardIsEmpty(): boolean { return this.board.isEmpty(); }
