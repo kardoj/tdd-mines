@@ -58,6 +58,21 @@ test('opening an empty cell on the bottom row opens adjacent empty and number ce
     }
 });
 
+test('game is won when the last non-mine cell is opened', () => {
+    const board = oneMineTopCenterBoard();
+    game.start(3, board);
+    game.openCell(8);
+    game.openCell(7);
+    game.openCell(6);
+    game.openCell(5);
+    game.openCell(4);
+    game.openCell(3);
+    game.openCell(2);
+    game.openCell(0);
+
+    expect(game.isWon()).toEqual(true);
+});
+
 function oneMineTopCenterBoard(): Array<Cell> {
     return [
         new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),

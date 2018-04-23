@@ -28,6 +28,7 @@ class Game {
     boardIsEmpty(): boolean { return this.board.isEmpty(); }
     allCellsClosed(): boolean { return this.board.allCellsClosed(); }
     cellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
+    isWon(): boolean { return this.state === GameState.IsWon; }
     isLost(): boolean { return this.state === GameState.IsLost; }
     isRunning(): boolean { return this.state === GameState.IsRunning; }
 }
