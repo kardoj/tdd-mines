@@ -1,7 +1,7 @@
 import Game from '../../src/components/game';
 import { Cell, CellContent } from '../../src/components/cell';
 
-let game: Game = new Game();
+let game: Game;
 beforeEach(() => game = new Game());
 
 test('start sets game board', () => {
