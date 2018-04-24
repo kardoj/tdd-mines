@@ -5,5 +5,5 @@ test('generates a 3 by 3 board', () => {
 });
 
 test('generated 3 by 3 board has 3 mines', () => {
-    expect(BoardGenerator.generate(3, 3, 3).filter((cell) => { return cell.isAMine(); }).length).toEqual(3);
+    expect(BoardGenerator.generate(3, 3, 3).filter(cell => cell.isAMine()).length).toEqual(3);
 });
