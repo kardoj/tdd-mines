@@ -11,10 +11,6 @@ class Board {
         this.cols = cols;
         this.table = new Table(this.cols, this.cells.length);
     }
-    
-    closeAllCells() {
-        this.cells.forEach((cell) => { cell.close(); });
-    }
 
     openCell(index: number) {
         const cell = this.cells[index];

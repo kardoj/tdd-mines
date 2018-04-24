@@ -13,7 +13,6 @@ class Game {
 
     start(cols: number, boardState: Array<Cell>) {
         this.board = new Board(cols, boardState);
-        this.board.closeAllCells();
         this.state = GameState.IsRunning;
     }
 

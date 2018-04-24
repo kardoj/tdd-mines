@@ -16,14 +16,6 @@ test('start sets game running', () => {
     expect(game.isRunning()).toEqual(true);
 });
 
-test('start closes every cell', () => {
-    const board = oneMineTopCenterBoard();
-    board[0].open();
-    game.start(3, board);
-
-    expect(game.allCellsClosed()).toEqual(true);
-});
-
 test('opens a cell', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(0);
