@@ -35,11 +35,9 @@ class Board {
         return this.cells[index].isFlagged;
     }
 
-    allCellsClosed(): boolean {
+    allCellsAreClosed(): boolean {
         for (let i = 0; i < this.cells.length; i++) {
-            if (!this.cells[i].isClosed()) {
-                return false;
-            }
+            if (!this.cells[i].isClosed()) return false;
         }
         return true;
     }
