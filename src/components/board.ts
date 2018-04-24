@@ -17,7 +17,6 @@ class Board {
     }
 
     openCell(index: number) {
-        if (this.cellDoesNotExist(index)) return;
         const cell = this.cells[index];
         cell.open();
         if (cell.isEmpty()) this.openAdjacentEmptyAndNumberCells(index);
@@ -28,7 +27,6 @@ class Board {
     }
 
     cellIsClosed(index: number): boolean {
-        if (this.cellDoesNotExist(index)) return false; // TODO: Needs a test
         return this.cells[index].isClosed();
     }
 
@@ -50,7 +48,6 @@ class Board {
     }
 
     cellIsAMine(index: number): boolean {
-        if (this.cellDoesNotExist(index)) return false; // TODO: Needs a test
         return this.cells[index].isAMine();
     }
 
@@ -60,10 +57,6 @@ class Board {
             if (cell.isClosed() && !cell.isAMine()) return false;
         }
         return true;
-    }
-
-    private cellDoesNotExist(index: number): boolean {
-        return this.cells[index] === undefined;
     }
 
     /** Opens all adjacent empty and number cells recursively */

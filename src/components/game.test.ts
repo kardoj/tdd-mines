@@ -31,13 +31,6 @@ test('opens a cell', () => {
     expect(game.cellIsClosed(0)).toEqual(false);
 });
 
-test('opens a cell that does not exist', () => {
-    game.start(3, oneMineTopCenterBoard());
-    game.openCell(69);
-
-    expect(game.cellIsClosed(69)).toEqual(false);
-});
-
 test('opening an empty cell on the bottom row opens adjacent empty and number cells', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(7);
