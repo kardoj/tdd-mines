@@ -1,5 +1,5 @@
-import Cell from './cell';
 import Table from '../lib/table';
+import Cell from './cell';
 
 class Board {
     private cells: Array<Cell> = [];
