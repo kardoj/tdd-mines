@@ -19,10 +19,12 @@ enum CellStatus {
 class Cell {
     content: CellContent;
     status: CellStatus;
+    isFlagged: boolean;
 
     constructor(content: CellContent) {
         this.content = content;
         this.status = CellStatus.Closed;
+        this.isFlagged = false;
     }
 
     open() { this.status = CellStatus.Opened; }

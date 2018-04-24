@@ -23,9 +23,17 @@ class Board {
         if (cell.isEmpty()) this.openAdjacentEmptyAndNumberCells(index);
     }
 
+    flagCell(index: number) {
+        this.cells[index].isFlagged = true;
+    }
+
     cellIsClosed(index: number): boolean {
-        if (this.cellDoesNotExist(index)) return false;
+        if (this.cellDoesNotExist(index)) return false; // TODO: Needs a test
         return this.cells[index].isClosed();
+    }
+
+    cellIsFlagged(index: number): boolean {
+        return this.cells[index].isFlagged;
     }
 
     isEmpty() {
@@ -42,7 +50,7 @@ class Board {
     }
 
     cellIsAMine(index: number): boolean {
-        if (this.cellDoesNotExist(index)) return false;
+        if (this.cellDoesNotExist(index)) return false; // TODO: Needs a test
         return this.cells[index].isAMine();
     }
 

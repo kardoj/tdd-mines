@@ -87,6 +87,13 @@ test('game is won when the last non-mine cell is opened', () => {
     expect(game.isWon()).toEqual(true);
 });
 
+test('flags a cell', () => {
+    game.start(3, oneMineTopCenterBoard());
+    game.flagCell(1);
+
+    expect(game.cellIsFlagged(1)).toEqual(true);
+});
+
 function oneMineTopCenterBoard(): Array<Cell> {
     return [
         new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),

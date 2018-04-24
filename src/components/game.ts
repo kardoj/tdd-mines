@@ -30,9 +30,11 @@ class Game {
         }
     }
 
+    flagCell(index: number) { return this.board.flagCell(index); }
     boardIsEmpty(): boolean { return this.board.isEmpty(); }
     allCellsClosed(): boolean { return this.board.allCellsClosed(); }
     cellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
+    cellIsFlagged(index: number): boolean { return this.board.cellIsFlagged(index); }
     isWon(): boolean { return this.state === GameState.IsWon; }
     isLost(): boolean { return this.state === GameState.IsLost; }
     isRunning(): boolean { return this.state === GameState.IsRunning; }
