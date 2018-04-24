@@ -70,6 +70,13 @@ test('flags a cell', () => {
     expect(game.cellIsFlagged(1)).toEqual(true);
 });
 
+test('open cell can not be flagged', () => {
+    game.openCell(0);
+    game.flagCell(0);
+
+    expect(game.cellIsFlagged(0)).toEqual(false);
+});
+
 test('flagged cell does not open', () => {
     game.flagCell(3);
     game.openCell(3);
