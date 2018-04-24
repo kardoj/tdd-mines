@@ -8,7 +8,7 @@ class Table {
         this.cellCount = cellCount;
     }
 
-    getAdjacentIndexes(index: number): Array<number> {
+    getAdjacentIndexes(index: number): number[] {
         const top = index - this.cols;
         const topLeft = top - 1;
         const topRight = top + 1;
