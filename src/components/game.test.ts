@@ -83,7 +83,7 @@ test('unflags a cell', () => {
     expect(game.cellIsFlagged(3)).toEqual(false);
 });
 
-function oneMineTopCenterBoard(): Array<Cell> {
+function oneMineTopCenterBoard(): Cell[] {
     return [
         new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
         new Cell(CellContent.One), new Cell(CellContent.One), new Cell(CellContent.One),

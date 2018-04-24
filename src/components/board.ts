@@ -2,11 +2,11 @@ import Table from '../lib/table';
 import Cell from './cell';
 
 class Board {
-    private cells: Array<Cell> = [];
+    private cells: Cell[] = [];
     private cols: number;
     private table: Table;
 
-    constructor(cols: number, state: Array<Cell>) {
+    constructor(cols: number, state: Cell[]) {
         this.cells = state;
         this.cols = cols;
         this.table = new Table(this.cols, this.cells.length);

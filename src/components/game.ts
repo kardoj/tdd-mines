@@ -11,7 +11,7 @@ class Game {
     private board: Board;
     private state: GameState;
 
-    constructor(cols: number, boardState: Array<Cell>) {
+    constructor(cols: number, boardState: Cell[]) {
         this.board = new Board(cols, boardState);
         this.state = GameState.IsRunning;
     }
