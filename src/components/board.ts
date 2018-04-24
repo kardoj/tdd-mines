@@ -14,6 +14,7 @@ class Board {
 
     openCell(index: number) {
         const cell = this.cells[index];
+        if (cell.isFlagged) return;
         cell.open();
         if (cell.isEmpty()) this.openAdjacentEmptyAndNumberCells(index);
     }

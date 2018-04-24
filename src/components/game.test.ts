@@ -87,6 +87,14 @@ test('flags a cell', () => {
     expect(game.cellIsFlagged(1)).toEqual(true);
 });
 
+test('flagged cell does not open', () => {
+    game.start(3, oneMineTopCenterBoard());
+    game.flagCell(3);
+    game.openCell(3);
+
+    expect(game.cellIsClosed(3)).toEqual(true);
+});
+
 function oneMineTopCenterBoard(): Array<Cell> {
     return [
         new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
