@@ -33,6 +33,7 @@ class Game {
         if (!this.cellIsClosed(index)) return;
         return this.board.flagCell(index);
     }
+    
     unflagCell(index: number) { return this.board.unflagCell(index); }
     allCellsClosed(): boolean { return this.board.allCellsAreClosed(); }
     cellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
