@@ -36,6 +36,14 @@ test('opening an empty cell on the bottom row opens adjacent empty and number ce
     }
 });
 
+test('opening an empty cell does not open an adjacent flagged cell', () => {
+    game.start(3, oneMineTopCenterBoard());
+    game.flagCell(4);
+    game.openCell(7);
+
+    expect(game.cellIsClosed(4)).toEqual(true);
+});
+
 test('the game is lost when a mine is opened', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(1);

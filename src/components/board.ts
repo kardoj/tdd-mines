@@ -60,6 +60,8 @@ class Board {
         const adjacentIndexes = this.table.getAdjacentIndexes(index);
         for (let i = 0; i < adjacentIndexes.length; i++) {
             const cell = this.cells[adjacentIndexes[i]];
+            if (cell.isFlagged) return;
+
             if (cell.isEmpty() || cell.isANumber()) cell.open();
 
             if (cell.isEmpty() && cell.isClosed()) {
