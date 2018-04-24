@@ -10,6 +10,7 @@
     "curly": false,
     "member-access": [
       true, "no-public"
-    ]
+    ],
+    "no-console": false
   }
 }
