@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Minesweeper from './minesweeper';
+import Minesweeper from './components/minesweeper';
 
 ReactDOM.render(
   <Minesweeper />,
