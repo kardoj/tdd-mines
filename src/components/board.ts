@@ -36,7 +36,7 @@ class Board {
     }
 
     allCellsAreClosed(): boolean {
-        for (const cell of this.cells) {
+        for (let cell of this.cells) {
             if (!cell.isClosed()) return false;
         }
         return true;
@@ -47,7 +47,7 @@ class Board {
     }
 
     allClosedCellsAreMines(): boolean {
-        for (const cell of this.cells) {
+        for (let cell of this.cells) {
             if (cell.isClosed() && !cell.isAMine()) return false;
         }
         return true;
@@ -56,7 +56,7 @@ class Board {
     /** Opens all adjacent empty and number cells recursively */
     private openAdjacentEmptyAndNumberCells(index: number) {
         const adjacentIndexes = this.table.getAdjacentIndexes(index);
-        for (const ai of adjacentIndexes) {
+        for (let ai of adjacentIndexes) {
             const cell = this.cells[ai];
             if (cell.isFlagged) return;
 
