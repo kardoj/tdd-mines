@@ -1,5 +1,5 @@
-import Cell from './cell';
 import Board from './board';
+import Cell from './cell';
 
 enum GameState {
     IsRunning,

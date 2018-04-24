@@ -1,5 +1,5 @@
-import Game from '../../src/components/game';
 import { Cell, CellContent } from '../../src/components/cell';
+import Game from '../../src/components/game';
 
 let game: Game;
 beforeEach(() => game = new Game(3, oneMineTopCenterBoard()));
