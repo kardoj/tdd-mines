@@ -23,6 +23,10 @@ class Board {
         this.cells[index].isFlagged = true;
     }
 
+    unflagCell(index: number) {
+        this.cells[index].isFlagged = false;
+    }
+
     cellIsClosed(index: number): boolean {
         return this.cells[index].isClosed();
     }

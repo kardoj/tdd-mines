@@ -95,6 +95,13 @@ test('flagged cell does not open', () => {
     expect(game.cellIsClosed(3)).toEqual(true);
 });
 
+test('unflags a cell', () => {
+    game.start(3, oneMineTopCenterBoard());
+    game.unflagCell(3);
+
+    expect(game.cellIsFlagged(3)).toEqual(false);
+});
+
 function oneMineTopCenterBoard(): Array<Cell> {
     return [
         new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
