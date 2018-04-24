@@ -11,7 +11,7 @@ class Game {
     private board: Board;
     private state: GameState;
 
-    start(cols: number, boardState: Array<Cell>) {
+    constructor(cols: number, boardState: Array<Cell>) {
         this.board = new Board(cols, boardState);
         this.state = GameState.IsRunning;
     }
@@ -31,7 +31,6 @@ class Game {
 
     flagCell(index: number) { return this.board.flagCell(index); }
     unflagCell(index: number) { return this.board.unflagCell(index); }
-    boardIsEmpty(): boolean { return this.board.isEmpty(); }
     allCellsClosed(): boolean { return this.board.allCellsClosed(); }
     cellIsClosed(index: number): boolean { return this.board.cellIsClosed(index); }
     cellIsFlagged(index: number): boolean { return this.board.cellIsFlagged(index); }

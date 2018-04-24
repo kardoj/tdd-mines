@@ -35,10 +35,6 @@ class Board {
         return this.cells[index].isFlagged;
     }
 
-    isEmpty() {
-        return this.cells.length === 0;
-    }
-
     allCellsClosed(): boolean {
         for (let i = 0; i < this.cells.length; i++) {
             if (!this.cells[i].isClosed()) {
