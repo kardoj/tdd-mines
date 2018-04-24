@@ -1,11 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import Minesweeper from './minesweeper';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
+  <Minesweeper />,
+  document.getElementById('minesweeper') as HTMLElement
 );
-registerServiceWorker();
