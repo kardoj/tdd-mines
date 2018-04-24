@@ -46,6 +46,14 @@ class Board {
         return this.cells[index].isAMine();
     }
 
+    allClosedCellsAreMines(): boolean {
+        for (let i = 0; i < this.cells.length; i++) {
+            const cell = this.cells[i];
+            if (cell.isClosed() && !cell.isAMine()) return false;
+        }
+        return true;
+    }
+
     private cellDoesNotExist(index: number): boolean {
         return this.cells[index] === undefined;
     }

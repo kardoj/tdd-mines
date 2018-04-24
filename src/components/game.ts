@@ -19,9 +19,14 @@ class Game {
 
     openCell(index: number) {
         this.board.openCell(index);
+
         if (this.board.cellIsAMine(index)) {
             this.state = GameState.IsLost;
             return;
+        }
+
+        if (this.board.allClosedCellsAreMines()) {
+            this.state = GameState.IsWon;
         }
     }
 

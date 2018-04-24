@@ -38,13 +38,6 @@ test('opens a cell that does not exist', () => {
     expect(game.cellIsClosed(69)).toEqual(false);
 });
 
-test('the game is lost when a mine is opened', () => {
-    game.start(3, oneMineTopCenterBoard());
-    game.openCell(1);
-
-    expect(game.isLost()).toEqual(true);
-});
-
 test('opening an empty cell on the bottom row opens adjacent empty and number cells', () => {
     game.start(3, oneMineTopCenterBoard());
     game.openCell(7);
@@ -56,6 +49,27 @@ test('opening an empty cell on the bottom row opens adjacent empty and number ce
             expect(game.cellIsClosed(i)).toEqual(false);
         }
     }
+});
+
+test('the game is lost when a mine is opened', () => {
+    game.start(3, oneMineTopCenterBoard());
+    game.openCell(1);
+
+    expect(game.isLost()).toEqual(true);
+});
+
+test('game is running when one non-mine cell is closed', () => {
+    const board = oneMineTopCenterBoard();
+    game.start(3, board);
+    game.openCell(8);
+    game.openCell(7);
+    game.openCell(6);
+    game.openCell(5);
+    game.openCell(4);
+    game.openCell(3);
+    game.openCell(2);
+
+    expect(game.isRunning()).toEqual(true);
 });
 
 test('game is won when the last non-mine cell is opened', () => {
