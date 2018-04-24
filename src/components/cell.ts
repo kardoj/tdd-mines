@@ -1,5 +1,4 @@
 enum CellContent {
-    Mine,
     Empty,
     One,
     Two,
@@ -8,7 +7,8 @@ enum CellContent {
     Five,
     Six,
     Seven,
-    Eight
+    Eight,
+    Mine
 }
 
 enum CellStatus {
