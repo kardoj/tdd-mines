@@ -5,3 +5,4 @@ Initial configuration of Typescript, React and Jest was achieved with the help o
 
 ## Notable changes induced by TDD or the need to test more easily
 * Table class - test that the correct adjacent indexes are found when opening a cell without going through the whole board setup. It also occurred to me that this functionality is not specific to Minesweeper at all but could probably be used in other table-based (e.g. chess, checkers, tic tac toe) games. Table is definitely a structure that did not occur to me while building my previous versions of the game.
+* Constructor testing - constructor code should be tested when it changes initial data. When each change has it's own test it documents this behaviour.
