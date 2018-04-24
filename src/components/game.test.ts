@@ -2,7 +2,7 @@ import { Cell, CellContent } from '../../src/components/cell';
 import Game from '../../src/components/game';
 
 let game: Game;
-beforeEach(() => game = new Game(3, oneMineTopCenterBoard()));
+beforeEach(() => game = new Game(3, oneMineTopCenterBoard));
 
 test('new game is running', () => {
     expect(game.isRunning()).toEqual(true);
@@ -83,10 +83,10 @@ test('unflags a cell', () => {
     expect(game.cellIsFlagged(3)).toEqual(false);
 });
 
-function oneMineTopCenterBoard(): Cell[] {
-    return [
-        new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
-        new Cell(CellContent.One), new Cell(CellContent.One), new Cell(CellContent.One),
-        new Cell(CellContent.Empty), new Cell(CellContent.Empty), new Cell(CellContent.Empty)
-    ];
-}
+const oneMineTopCenterBoard = [
+    new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
+    new Cell(CellContent.One), new Cell(CellContent.One), new Cell(CellContent.One),
+    new Cell(CellContent.Empty), new Cell(CellContent.Empty), new Cell(CellContent.Empty)
+];
+
+export { oneMineTopCenterBoard };
