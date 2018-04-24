@@ -13,10 +13,10 @@ test('get generates integers from startInc to endExc when howMany is equal to en
 test('get generates 100 unique integers in range of 0 to 1000', () => {
     const numbers = Randomizer.get(100, 0, 1000);
     
-    for (let i of numbers) {
+    for (const i of numbers) {
         expect(i).toBeGreaterThanOrEqual(0);
         expect(i).toBeLessThan(1000);
-        expect(numbers.filter((val) => { return val === i; }).length).toEqual(1);
+        expect(numbers.filter(val => val === i).length).toEqual(1);
     }
     expect(numbers.length).toEqual(100);
 });

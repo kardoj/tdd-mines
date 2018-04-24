@@ -1,7 +1,7 @@
 class Randomizer {
     /** Returns random unique integers in range of startInc and endExc */
     static get(howMany: number, startInc: number, endExc: number): number[] {
-        let numbers: number[] = [];
+        const numbers: number[] = [];
         if (howMany >= endExc) {
             for (let i = 0; i < endExc; i++) {
                 numbers.push(i);

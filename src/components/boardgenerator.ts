@@ -1,10 +1,10 @@
-import { Cell, CellContent } from './cell';
 import Randomizer from '../lib/randomizer';
+import { Cell, CellContent } from './cell';
 
 class BoardGenerator {
     static generate(cols: number, rows: number, mines: number): Cell[] {
         const minePositions = Randomizer.get(mines, 0, cols * rows);
-        let board: Cell[] = [];
+        const board: Cell[] = [];
 
         const cells = cols * rows;
         for (let i = 0; i < cells; i++) {
