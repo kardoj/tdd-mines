@@ -22,8 +22,8 @@ class Game extends React.Component {
         this.mines = 20;
 
         if (props.cols) this.cols = props.cols;
-        if (props.boardState) this.board = new Board(this.cols, props.boardState);
-        if (!this.board) this.board = new Board(props.cols, BoardStateGenerator.generate(this.cols, this.rows, this.mines));
+        if (props.boardState) this.board = new Board({ cols: this.cols, boardState: props.boardState });
+        if (!this.board) this.board = new Board({ cols: props.cols, boardState: BoardStateGenerator.generate(this.cols, this.rows, this.mines) });
         this.gameState = GameState.IsRunning;
     }
 
@@ -54,7 +54,7 @@ class Game extends React.Component {
     isRunning(): boolean { return this.gameState === GameState.IsRunning; }
 
     render(): JSX.Element {
-        return (<div>This is Minesweeper</div>);
+        return (<div>{this.board.render()}</div>);
     }
 }
 

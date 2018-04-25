@@ -1,14 +1,16 @@
+import * as React from 'react';
 import Table from '../lib/table';
 import Cell from './cell';
 
-class Board {
+class Board extends React.Component {
     private cells: Cell[] = [];
     private cols: number;
     private table: Table;
 
-    constructor(cols: number, state: Cell[]) {
-        this.cells = state;
-        this.cols = cols;
+    constructor(props: any) {
+        super(props);
+        this.cells = props.boardState;
+        this.cols = props.cols;
         this.table = new Table(this.cols, this.cells.length);
     }
 
@@ -51,6 +53,10 @@ class Board {
             if (cell.isClosed() && !cell.isAMine()) return false;
         }
         return true;
+    }
+
+    render(): JSX.Element {
+        return (<div>Board</div>);
     }
 
     /** Opens all adjacent empty and number cells recursively */
