@@ -2,7 +2,7 @@ import Randomizer from '../lib/randomizer';
 import { Cell, CellContent } from './cell';
 import MineCounter from './minecounter';
 
-class BoardGenerator {
+class BoardStateGenerator {
     static generate(cols: number, rows: number, mines: number): Cell[] {
         const minePositions = Randomizer.get(mines, 0, cols * rows);
         const board: Cell[] = [];
@@ -20,4 +20,4 @@ class BoardGenerator {
     }
 }
 
-export default BoardGenerator;
+export default BoardStateGenerator;
