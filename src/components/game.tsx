@@ -23,7 +23,7 @@ class Game extends React.Component {
 
         if (props.cols) this.cols = props.cols;
         if (props.boardState) this.board = new Board({ cols: this.cols, boardState: props.boardState });
-        if (!this.board) this.board = new Board({ cols: props.cols, boardState: BoardStateGenerator.generate(this.cols, this.rows, this.mines) });
+        if (!this.board) this.board = new Board({ cols: this.cols, boardState: BoardStateGenerator.generate(this.cols, this.rows, this.mines) });
         this.gameState = GameState.IsRunning;
     }
 

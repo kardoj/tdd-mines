@@ -92,8 +92,8 @@ test('unflags a cell', () => {
 
 function oneMineTopCenterBoard(): Cell[] {
     return [
-        new Cell(CellContent.One), new Cell(CellContent.Mine), new Cell(CellContent.One),
-        new Cell(CellContent.One), new Cell(CellContent.One), new Cell(CellContent.One),
-        new Cell(CellContent.Empty), new Cell(CellContent.Empty), new Cell(CellContent.Empty)
+        new Cell({ content: CellContent.One }), new Cell({ content: CellContent.Mine }), new Cell({ content: CellContent.One }),
+        new Cell({ content: CellContent.One }), new Cell({ content: CellContent.One }), new Cell({ content: CellContent.One }),
+        new Cell({ content: CellContent.Empty }), new Cell({ content: CellContent.Empty }), new Cell({ content: CellContent.Empty })
     ];
 }

@@ -56,7 +56,32 @@ class Board extends React.Component {
     }
 
     render(): JSX.Element {
-        return (<div>Board</div>);
+        return (
+            <table>
+                <tbody>
+                    {this.renderBoardRows()}
+                </tbody>
+            </table>   
+        );
+    }
+
+    private renderBoardRows(): JSX.Element[] {
+        const rowCount = this.cells.length / this.cols;
+        const rows: JSX.Element[] = [];
+        for (let i = 0; i < rowCount; i++) {
+            rows.push(this.renderBoardRow(i));
+        }
+        return rows;
+    }
+
+    private renderBoardRow(row: number): JSX.Element {
+        const startIndex = row * this.cols;
+        const endIndex = row * this.cols + this.cols;
+        const tds: JSX.Element[] = [];
+        for (let i = startIndex; i < endIndex; i++) {
+            tds.push(this.cells[i].render(i));
+        }
+        return (<tr key={row}>{tds}</tr>);
     }
 
     /** Opens all adjacent empty and number cells recursively */

@@ -1,7 +1,7 @@
 import { Cell, CellContent } from './cell';
 
 let cell: Cell;
-beforeEach(() => cell = new Cell(CellContent.Empty));
+beforeEach(() => cell = new Cell({ content: CellContent.Empty }));
 
 test('new cell is not flagged', () => {
     expect(cell.isFlagged).not.toEqual(true);

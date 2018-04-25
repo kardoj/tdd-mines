@@ -10,9 +10,9 @@ class BoardStateGenerator {
         const cells = cols * rows;
         for (let i = 0; i < cells; i++) {
             if (minePositions.indexOf(i) >= 0) {
-                board[i] = new Cell(CellContent.Mine);
+                board[i] = new Cell({ content: CellContent.Mine });
             } else {
-                board[i] = new Cell(CellContent.Empty);
+                board[i] = new Cell({ content: CellContent.Empty });
             }
         }
 

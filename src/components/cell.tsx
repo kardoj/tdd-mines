@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 enum CellContent {
     Empty,
     One,
@@ -16,13 +18,14 @@ enum CellStatus {
     Closed
 }
 
-class Cell {
+class Cell extends React.Component {
     content: CellContent;
     status: CellStatus;
     isFlagged: boolean;
 
-    constructor(content: CellContent) {
-        this.content = content;
+    constructor(props: any) {
+        super(props);
+        this.content = props.content;
         this.status = CellStatus.Closed;
         this.isFlagged = false;
     }
@@ -33,6 +36,10 @@ class Cell {
     isAMine(): boolean { return this.content === CellContent.Mine; }
     isEmpty(): boolean { return this.content === CellContent.Empty; }
     isANumber(): boolean { return this.content !== CellContent.Empty && this.content !== CellContent.Mine; }
+
+    render(key?: number): JSX.Element {
+        return (<td key={key}>{this.content}</td>);
+    }
 }
 
 export { CellContent, Cell };

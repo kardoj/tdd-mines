@@ -8,12 +8,12 @@ class MineCounter {
         const cBoard = [];
         for (let i = 0; i < board.length; i++) {
             if (board[i].isAMine()) {
-                cBoard[i] = new Cell(CellContent.Mine);
+                cBoard[i] = new Cell({ content: CellContent.Mine });
             } else {
                 const adjacentMineCount = table.getAdjacentIndexes(i)
                     .map(cellIndex => board[cellIndex])
                     .filter(cell => cell.isAMine()).length;
-                cBoard[i] = new Cell(adjacentMineCount);
+                cBoard[i] = new Cell({ content: adjacentMineCount });
             }
         }
         return cBoard;
