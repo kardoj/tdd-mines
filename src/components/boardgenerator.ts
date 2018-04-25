@@ -1,5 +1,6 @@
 import Randomizer from '../lib/randomizer';
 import { Cell, CellContent } from './cell';
+import MineCounter from './minecounter';
 
 class BoardGenerator {
     static generate(cols: number, rows: number, mines: number): Cell[] {
@@ -15,7 +16,7 @@ class BoardGenerator {
             }
         }
 
-        return board;
+        return MineCounter.count(cols, board);
     }
 }
 
