@@ -2,7 +2,7 @@ import { Cell, CellContent } from '../../src/components/cell';
 import Game from '../../src/components/game';
 
 let game: Game;
-beforeEach(() => game = new Game(3, oneMineTopCenterBoard()));
+beforeEach(() => game = new Game({ cols: 3, boardState: oneMineTopCenterBoard() }));
 
 test('new game is running', () => {
     expect(game.isRunning()).toEqual(true);

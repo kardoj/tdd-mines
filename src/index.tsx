@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Minesweeper from './components/minesweeper';
+import Game from './components/game';
 
 ReactDOM.render(
-  <Minesweeper />,
+  <Game />,
   document.getElementById('minesweeper') as HTMLElement
 );
